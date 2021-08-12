@@ -4,9 +4,11 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 function ExpenseItem(props) {
-    // useState always return an array with 2 elements
-    // the first element is the current state
+    // useState function always return an array with 2 elements
+    // the first element is the current state with latest value
     // the second element is the function to update that state
+    // under the hood, useState function is a Hook.
+    // Hook let you use state and other React features without writing a class component
     const [title, setTitle] = useState(props.title);
 
     const handleChangeTitleClick = () => {
