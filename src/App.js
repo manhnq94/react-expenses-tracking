@@ -39,7 +39,7 @@ function App() {
         newExpense.amount = parseFloat(newExpense.amount);
 
         setExpenses((prevExpenses) => {
-            return [...prevExpenses, newExpense];
+            return [newExpense, ...prevExpenses];
         });
     };
 
