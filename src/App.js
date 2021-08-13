@@ -34,7 +34,7 @@ function App() {
 
     const handleSubmit = (newExpense) => {
         console.log(newExpense.title, newExpense.date, newExpense.amount);
-        newExpense.id = expenses.length;
+        newExpense.id = Math.random().toString();
         newExpense.date = new Date(newExpense.date);
         newExpense.amount = parseFloat(newExpense.amount);
 
