@@ -17,7 +17,7 @@ const NewExpense = (props) => {
         <button onClick={handleShowForm}>Add New Expense</button>
     );
 
-    if (hideForm == false) {
+    if (hideForm === false) {
         expenseFormContent = (
             <ExpenseForm onSubmit={props.onSubmit} onCancel={handleHideForm} />
         );
