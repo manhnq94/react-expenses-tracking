@@ -5,12 +5,18 @@ const ExpenseForm = (props) => {
     const [state, setState] = useState({
         title: "",
         date: "",
-        amount: 0,
+        amount: "",
     });
 
     const handleSubmit = (event) => {
         event.preventDefault();
         props.onSubmit(state);
+
+        setState({
+            title: "",
+            date: "",
+            amount: "",
+        });
     };
 
     const handleChange = (event) => {
@@ -30,7 +36,12 @@ const ExpenseForm = (props) => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" name="title" onChange={handleChange} />
+                    <input
+                        type="text"
+                        name="title"
+                        value={state.title}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
@@ -39,6 +50,7 @@ const ExpenseForm = (props) => {
                         min="0.01"
                         step="0.01"
                         name="amount"
+                        value={state.amount}
                         onChange={handleChange}
                     />
                 </div>
@@ -49,6 +61,7 @@ const ExpenseForm = (props) => {
                         min="2019-01-01"
                         max="2022-12-31"
                         name="date"
+                        value={state.date}
                         onChange={handleChange}
                     />
                 </div>
